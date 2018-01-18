@@ -18,13 +18,24 @@ class Die {
     let rollValue = randomVal(1, 7);
     $(this.div).empty();
     this.div.appendChild(document.createTextNode(`${rollValue}`));
-    
   }
 }
 
 let btn = document.getElementById("button-die");
+let btn2 = document.getElementById("button-sum");
 
 btn.addEventListener("click", createDie);
+btn2.addEventListener("click", sumDice);
+
+
+function sumDice(){
+   var sum = 0;
+    $('.new-die').each(function(){
+        sum += parseFloat($(this).text());
+    })
+    $('#total').text(sum);
+};
+
 
 function createDie() {
   let xVal = 25;

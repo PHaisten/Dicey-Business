@@ -13,3 +13,10 @@
   line-height: 6em;
   cursor: pointer;
 }
+
+#total {
+    font-family: Helvetica;
+    font-size: 25px;
+    
+    padding: 1em;
+}
