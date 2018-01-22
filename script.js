@@ -16,11 +16,18 @@ class Die {
     btn2.addEventListener('click', () => {
         this.roll();
     });
+    this.div.addEventListener('dblclick', () => {
+        this.deleteDie();
+    });
   }
   roll() {
     let rollValue = randomVal(1, 7);
     $(this.div).empty();
     this.div.appendChild(document.createTextNode(`${rollValue}`));
+  }
+
+  deleteDie() {
+      this.div.remove();
   }
 }
 
@@ -38,13 +45,6 @@ function createDie() {
   let die = new Die(dieValue, xVal, yVal);
   diceArray.push(die);
   console.log(diceArray);
-}
-
-function rollDice() {
-    let diceValue = randomVal(1, 7);
-    let xVal = 25;
-    let yVal = 25;
-    let dice = new Die(diceValue, xVal, yVal);
 }
 
 function sumDice(){
